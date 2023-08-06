@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhg5kouplpxx0"]
+
+[ext_resource type="Texture2D" uid="uid://cq5gcr57ybj48" path="res://gnomeragdoll.png" id="1_2bcj7"]
+[ext_resource type="Script" path="res://Gnomeragdoll.gd" id="1_gansc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkxh2"]
+size = Vector2(12, 11)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v4wtk"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vx34w"]
+size = Vector2(4, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqgf2"]
+size = Vector2(4, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8afux"]
+size = Vector2(11, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0njho"]
+size = Vector2(11, 4)
+
+[node name="GnomeRagdoll" type="Node2D"]
+script = ExtResource("1_gansc")
+
+[node name="HeadRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeTorso" type="Polygon2D" parent="HeadRagdoll"]
+texture_filter = 1
+position = Vector2(-18, 16)
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(16.625, -0.3125, 16.6875, 15.9375, 30.75, 15.75, 32, 3.25, 31.8125, -1.625)
+uv = PackedVector2Array(16.625, -0.3125, 16.6875, 15.9375, 30.75, 15.75, 32, 3.25, 31.8125, -1.625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadRagdoll"]
+position = Vector2(6, 24.5)
+shape = SubResource("RectangleShape2D_mkxh2")
+disabled = true
+
+[node name="BodyRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeHead" type="Polygon2D" parent="BodyRagdoll"]
+texture_filter = 1
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(1, -1, 12, -1, 12, 19, 1, 21, 1, 11)
+uv = PackedVector2Array(-7.63994, -1.96672, 15.3555, -2.19365, 15.2799, 22.9955, -7.0348, 23.0711)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyRagdoll"]
+position = Vector2(6, 11)
+shape = SubResource("CapsuleShape2D_v4wtk")
+disabled = true
+
+[node name="LeftLegRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeHead2" type="Polygon2D" parent="LeftLegRagdoll"]
+texture_filter = 1
+position = Vector2(-36, 28)
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(35.1875, 0.5, 35.125, 15.0625, 42.625, 17, 44.6875, 10.9375, 44.4375, 0.5)
+uv = PackedVector2Array(35.1875, 0.5, 35.125, 15.0625, 42.625, 17, 44.6875, 10.9375, 44.4375, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftLegRagdoll"]
+position = Vector2(3, 36.5)
+shape = SubResource("RectangleShape2D_vx34w")
+disabled = true
+
+[node name="RightLegRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeHead3" type="Polygon2D" parent="RightLegRagdoll"]
+texture_filter = 1
+position = Vector2(-48, 28)
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(51.5, 0.625, 52.875, 15.75, 60.5625, 17.625, 65.5, 14.0625, 63.9375, 5.5, 61.8125, 0.1875)
+uv = PackedVector2Array(51.5, 0.625, 52.875, 15.75, 60.5625, 17.625, 65.5, 14.0625, 63.9375, 5.5, 61.8125, 0.1875)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightLegRagdoll"]
+position = Vector2(10, 36.5)
+shape = SubResource("RectangleShape2D_lqgf2")
+disabled = true
+
+[node name="LeftArmRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeHead4" type="Polygon2D" parent="LeftArmRagdoll"]
+texture_filter = 1
+position = Vector2(-32, -13)
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(19.1988, 32.2751, 19.1988, 42.0257, 27.8156, 42.6304, 34.316, 40.8919, 33.938, 32.124, 26.6062, 30.5367)
+uv = PackedVector2Array(19.1988, 32.2751, 19.1988, 42.0257, 27.8156, 42.6304, 34.316, 40.8919, 33.938, 32.124, 26.6062, 30.5367)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftArmRagdoll"]
+position = Vector2(-5.5, 22)
+shape = SubResource("RectangleShape2D_8afux")
+disabled = true
+
+[node name="RightArmRagdoll" type="RigidBody2D" parent="." groups=["limb"]]
+disable_mode = 1
+
+[node name="GnomeHead5" type="Polygon2D" parent="RightArmRagdoll"]
+texture_filter = 1
+position = Vector2(-25, -13)
+texture = ExtResource("1_2bcj7")
+polygon = PackedVector2Array(36.0544, 31.1413, 36.8859, 38.6243, 41.5722, 45.8806, 55.0265, 44.6712, 53.2124, 32.0484, 43.613, 26.7574)
+uv = PackedVector2Array(36.0544, 31.1413, 36.8859, 38.6243, 41.5722, 45.8806, 55.0265, 44.6712, 53.2124, 32.0484, 43.613, 26.7574)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightArmRagdoll"]
+position = Vector2(17.5, 22)
+shape = SubResource("RectangleShape2D_0njho")
+disabled = true
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(6, 19)
+node_a = NodePath("../HeadRagdoll")
+node_b = NodePath("../BodyRagdoll")
+softness = 0.25
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(3, 30)
+node_a = NodePath("../BodyRagdoll")
+node_b = NodePath("../LeftLegRagdoll")
+softness = 0.25
+
+[node name="PinJoint2D3" type="PinJoint2D" parent="."]
+position = Vector2(10, 30)
+node_a = NodePath("../BodyRagdoll")
+node_b = NodePath("../RightLegRagdoll")
+softness = 0.25
+
+[node name="PinJoint2D4" type="PinJoint2D" parent="."]
+position = Vector2(0, 22)
+node_a = NodePath("../BodyRagdoll")
+node_b = NodePath("../LeftArmRagdoll")
+softness = 0.25
+
+[node name="PinJoint2D5" type="PinJoint2D" parent="."]
+position = Vector2(12, 22)
+node_a = NodePath("../BodyRagdoll")
+node_b = NodePath("../RightArmRagdoll")
+softness = 0.25

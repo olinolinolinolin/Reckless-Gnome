@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://7lo564pjrobl"]
+
+[ext_resource type="Script" path="res://Coin.gd" id="1_lvfu0"]
+[ext_resource type="Texture2D" uid="uid://creji3dkmlbjp" path="res://GnomeCoin.png" id="2_itj6k"]
+[ext_resource type="AudioStream" uid="uid://du6hgcdbgnoii" path="res://Audio/CoinCollected.wav" id="3_etgwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgkqu"]
+radius = 18.0
+
+[node name="CoinArea" type="Area2D"]
+script = ExtResource("1_lvfu0")
+
+[node name="CoinSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_itj6k")
+
+[node name="CoinCollison" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vgkqu")
+
+[node name="CoinNoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_etgwl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

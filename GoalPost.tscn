@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn6dm1vp4uq1g"]
+
+[ext_resource type="Texture2D" uid="uid://cm5jnd6qorbah" path="res://Goal.png" id="1_b4evh"]
+[ext_resource type="Script" path="res://GoalPost.gd" id="2_2k1r8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blup0"]
+size = Vector2(38, 53)
+
+[node name="GoalPost" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_b4evh")
+script = ExtResource("2_2k1r8")
+
+[node name="GoalPostCheck" type="Area2D" parent="."]
+
+[node name="GoalPostCollison" type="CollisionShape2D" parent="GoalPostCheck"]
+position = Vector2(3, 3.5)
+shape = SubResource("RectangleShape2D_blup0")
+
+[connection signal="body_entered" from="GoalPostCheck" to="." method="_on_goal_post_check_body_entered"]

@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://hsa7s4boa0q"]
+
+[ext_resource type="Texture2D" uid="uid://jgfh15clhmab" path="res://title final.png" id="1_1ucaa"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_e8dnm"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8dnm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1ucaa")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 43.0
+offset_top = 384.0
+offset_right = 268.0
+offset_bottom = 648.0
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Load Game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.683
+anchor_top = 0.054
+anchor_right = 0.683
+anchor_bottom = 0.054
+offset_left = 0.639893
+offset_top = -0.32
+offset_right = 592.64
+offset_bottom = 90.68
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Controller"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Keyboard
+"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.723
+anchor_top = 0.005
+anchor_right = 0.723
+anchor_bottom = 0.005
+offset_left = -0.160156
+offset_top = -0.400001
+offset_right = 795.84
+offset_bottom = 113.6
+theme_override_font_sizes/font_size = 30
+text = "Choose your input prompts"
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

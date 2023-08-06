@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgl7gmllommi"]
+
+[ext_resource type="Script" path="res://Options.gd" id="1_xa465"]
+
+[node name="Options" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xa465")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.476
+anchor_top = 0.256
+anchor_right = 0.476
+anchor_bottom = 0.256
+offset_left = 0.0799561
+offset_top = 0.519989
+offset_right = 134.08
+offset_bottom = 102.52
+
+[node name="ResolutionButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resolution"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.474
+anchor_top = 0.288
+anchor_right = 0.474
+anchor_bottom = 0.288
+offset_left = 0.919922
+offset_top = -0.0400085
+offset_right = 143.92
+offset_bottom = 39.96
+
+[node name="ResolutionOptions" type="OptionButton" parent="VBoxContainer2"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "640 x 480"
+popup/item_0/id = 0
+popup/item_1/text = "1,280 × 720"
+popup/item_1/id = 1
+popup/item_2/text = "1,920 × 1,080"
+popup/item_2/id = 2
+popup/item_3/text = "2,560 × 1,440"
+popup/item_3/id = 3
+popup/item_4/text = "3,840 × 2,160"
+popup/item_4/id = 4
+
+[connection signal="item_selected" from="VBoxContainer2/ResolutionOptions" to="." method="_on_resolution_options_item_selected"]

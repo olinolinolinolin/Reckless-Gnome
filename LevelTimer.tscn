@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://p57sb4vs7esh"]
+
+[ext_resource type="Script" path="res://LevelTimer.gd" id="1_4yyk2"]
+
+[node name="TimerLabel" type="Label"]
+offset_right = 535.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 60
+text = "Time"
+script = ExtResource("1_4yyk2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,182 @@
+[gd_scene load_steps=5 format=3 uid="uid://cye1ddb1448tm"]
+
+[ext_resource type="Script" path="res://MapScreen.gd" id="1_0u78l"]
+[ext_resource type="Texture2D" uid="uid://b1fsty1ffjyh5" path="res://MapScreen.png" id="1_8fc5l"]
+[ext_resource type="AudioStream" uid="uid://decwk1w1qyljl" path="res://Secret/Special1.wav" id="3_ub26e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7oid"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0u78l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8fc5l")
+expand_mode = 1
+
+[node name="Map1" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.174
+anchor_top = 0.58
+anchor_right = 0.174
+anchor_bottom = 0.58
+offset_left = -205.08
+offset_top = -55.4
+offset_right = 154.92
+offset_bottom = 71.6
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "Gnoming Ham Outskirts"
+
+[node name="Map2" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.437
+anchor_top = 0.543
+anchor_right = 0.437
+anchor_bottom = 0.543
+offset_left = -0.0400391
+offset_top = -0.440063
+offset_right = 364.96
+offset_bottom = 122.56
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "All Roads Lead To Gnome
+"
+
+[node name="Map3" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.269
+anchor_right = 0.508
+anchor_bottom = 0.269
+offset_left = -0.360046
+offset_top = -0.52002
+offset_right = 203.64
+offset_bottom = 86.48
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "Gnome Alone"
+
+[node name="Map4" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.676
+anchor_top = 0.335
+anchor_right = 0.676
+anchor_bottom = 0.335
+offset_left = 0.079834
+offset_top = 0.199982
+offset_right = 296.08
+offset_bottom = 79.2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "Gnome Matter What"
+
+[node name="Map5" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.665
+anchor_top = 0.707
+anchor_right = 0.665
+anchor_bottom = 0.707
+offset_left = -0.800049
+offset_top = 0.440002
+offset_right = 342.2
+offset_bottom = 135.44
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "Gnome man left behind"
+
+[node name="MapBoss" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.892
+anchor_top = 0.792
+anchor_right = 0.892
+anchor_bottom = 0.792
+offset_left = -0.640015
+offset_top = -0.360046
+offset_right = 201.36
+offset_bottom = 96.64
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7oid")
+text = "Gnome Mercy"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 244.0
+offset_right = 417.0
+offset_bottom = 284.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="EnterLevelButton" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.869
+anchor_right = 0.03
+anchor_bottom = 0.869
+offset_left = -0.600002
+offset_top = 0.479919
+offset_right = 436.4
+offset_bottom = 118.48
+theme_override_font_sizes/font_size = 80
+text = "Enter Level"
+
+[node name="GoBackButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.868
+anchor_top = 0.018
+anchor_right = 0.868
+anchor_bottom = 0.018
+offset_left = -0.560059
+offset_top = -0.440001
+theme_override_font_sizes/font_size = 60
+text = "Go Back"
+
+[node name="SecretButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 982.0
+offset_top = 886.0
+offset_right = 1096.0
+offset_bottom = 917.0
+text = "Gnomda Civic"
+
+[node name="Gnomeeeee" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ub26e")
+
+[connection signal="pressed" from="Map1" to="." method="_on_map_1_pressed"]
+[connection signal="pressed" from="Map2" to="." method="_on_map_2_pressed"]
+[connection signal="pressed" from="Map3" to="." method="_on_map_3_pressed"]
+[connection signal="pressed" from="Map4" to="." method="_on_map_4_pressed"]
+[connection signal="pressed" from="Map5" to="." method="_on_map_5_pressed"]
+[connection signal="pressed" from="MapBoss" to="." method="_on_map_boss_pressed"]
+[connection signal="pressed" from="EnterLevelButton" to="." method="_on_enter_level_button_pressed"]
+[connection signal="pressed" from="GoBackButton" to="." method="_on_go_back_button_pressed"]
+[connection signal="pressed" from="SecretButton" to="." method="_on_secret_button_pressed"]

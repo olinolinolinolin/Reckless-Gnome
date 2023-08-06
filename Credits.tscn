@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddnjg626jegv8"]
+
+[ext_resource type="Script" path="res://Credits.gd" id="1_nose3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nose3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -18.0
+offset_top = -16.0
+offset_right = 1941.0
+offset_bottom = 1094.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 189.0
+offset_top = 75.0
+offset_right = 1677.0
+offset_bottom = 771.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Game Lead - OlinOlinOlinOlin
+
+Soft Director - Evan (Evsty)
+
+Hard Director - John (Hoxton)
+
+Wind Waker Water  Shader by GeistDev
+https://godotshaders.com/shader/wind-waker-2d-water-shader-canvas_item/
+
+God Rays Shader by pend00
+https://godotshaders.com/shader/god-rays/
+
+Special Thanks - Lorenzo (Actual Minecraft Dev!!!)
+
+and you the Player!   :)"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 28.375
+anchor_top = 19.85
+anchor_right = 28.375
+anchor_bottom = 19.85
+offset_left = -0.00012207
+offset_right = 768.0
+offset_bottom = 240.0
+
+[node name="BackToMap" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Back to Map Screen
+"
+
+[node name="Quit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Quit Game"
+
+[connection signal="pressed" from="Control/VBoxContainer/BackToMap" to="." method="_on_back_to_map_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
